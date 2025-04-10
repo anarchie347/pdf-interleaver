@@ -27,7 +27,7 @@ with open(firstpath, 'rb') as first, open(secpath, 'rb') as second:
 
 
 
-    output = open("..\output.pdf", 'wb')
+    output = open("../output.pdf", 'wb')
     writer.write(output)
     writer.close()
     output.close()

@@ -3,11 +3,14 @@ import sys
 
 firstpath = sys.argv[1]
 secpath = sys.argv[2]
+reverse = '-r' in sys.argv[3:]
 
 with open(firstpath, 'rb') as first, open(secpath, 'rb') as second:
 
     firstpages = pypdf.PdfReader(first).pages
     secpages = pypdf.PdfReader(second).pages
+    if reverse:
+        secpages = secpages[::-1] # reverse
 
     firstlen = len(firstpages)
     seclen = len(secpages)

@@ -3,7 +3,8 @@ import sys
 
 firstpath = sys.argv[1]
 secpath = sys.argv[2]
-reverse = '-r' in sys.argv[3:]
+savepath = sys.argv[3]
+reverse = '-r' in sys.argv[4:]
 
 with open(firstpath, 'rb') as first, open(secpath, 'rb') as second:
 
@@ -30,7 +31,7 @@ with open(firstpath, 'rb') as first, open(secpath, 'rb') as second:
 
 
 
-    output = open("../output.pdf", 'wb')
+    output = open(savepath, 'wb')
     writer.write(output)
     writer.close()
     output.close()
